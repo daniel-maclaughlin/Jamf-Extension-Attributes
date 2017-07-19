@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>Last Reboot</displayName>
+<description/>
+<dataType>date</dataType>
+<scriptContentsMac>#!/bin/sh&#13;
+&#13;
+echo "&lt;result&gt;$(date -jf "%s" "$(sysctl kern.boottime | awk -F'[= |,]' '{print $6}')" +"%Y-%m-%d %T")&lt;/result&gt;"</scriptContentsMac>
+<scriptContentsWindows/>
+</extensionAttribute>
